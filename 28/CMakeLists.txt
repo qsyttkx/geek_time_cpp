@@ -9,7 +9,7 @@ else()
   message(FATAL_ERROR "Unrecognized compiler")
 endif()
 
-find_package(Armadillo CONFIG)
+find_package(Armadillo REQUIRED)
 if(Armadillo_FOUND)
   set(HAVE_ARMA 1)
 endif()

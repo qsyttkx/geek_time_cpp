@@ -3,7 +3,7 @@ project(return_value_examples)
 
 set(CMAKE_CXX_STANDARD 17)
 
-find_package(Armadillo CONFIG)
+find_package(Armadillo REQUIRED)
 
 if(Armadillo_FOUND)
 add_executable(rv_test01_arma        test01_arma.cpp)
