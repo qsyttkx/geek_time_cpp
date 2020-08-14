@@ -30,8 +30,8 @@ private:
 template <typename T>
 class smart_ptr {
 public:
-    template <typename U>
-    friend class smart_ptr;
+    template <typename U>       // U是用来搞掂T的子类的相关操作（实现多态）
+    friend class smart_ptr;     // 模板默认T和U没有友元关系不能调用private属性、方法
 
     explicit smart_ptr(T* ptr = nullptr)
         : ptr_(ptr)

@@ -24,3 +24,15 @@ int main()
         puts(s);
     }
 }
+
+/*
+输出：
+
+Obj()
+~Obj()
+Obj()
+~Obj()
+life, the universe and everything
+
+构造函数中抛出异常，但是在try块的结尾处调用了析构函数，然后进入了catch块。
+*/

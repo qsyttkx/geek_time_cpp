@@ -5,6 +5,11 @@
 
 typedef std::array<char, 8> mykey_t;
 
+void test(std::array<int, 8> &a)
+{
+    std::cout << std::size(a) << std::endl;
+}
+
 int main()
 {
     std::map<mykey_t, int> mp;
