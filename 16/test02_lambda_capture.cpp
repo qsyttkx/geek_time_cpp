@@ -17,7 +17,7 @@ public:
     task(int data) : data_(data) {}
     auto lazy_launch()
     {
-        return [*this, count = get_count()]() mutable {
+        return [this, count = get_count()]() mutable {
             ostringstream oss;
             oss << "Done work " << data_ << " (No. " << count
                 << ") in thread " << this_thread::get_id() << '\n';
@@ -40,7 +40,9 @@ int main()
 {
     auto t = task{37};
     thread t1{t.lazy_launch()};
+    this_thread::sleep_for(1000ms);
     thread t2{t.lazy_launch()};
     t1.join();
     t2.join();
+    cout << "end." << endl;
 }

@@ -24,6 +24,7 @@ bit_count_t<V...> get_bit_count(index_sequence<V...>)
     return bit_count_t<V...>();
 }
 
+                 // get_bit_count()这里也是在编译期间就计算完了
 auto bit_count = get_bit_count(make_index_sequence<256>());
 
 int main()
