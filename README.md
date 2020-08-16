@@ -26,13 +26,10 @@
 因为堆内存的申请、释放背后操作系统需要进行比栈内存复杂的多的处理，使用堆内存相对而言是较慢的。所以只要允许我们应该尽可能优先使用栈内存，除非对象非常大或者不能确定其大小等情况。
 
 ```c++
-class MyClass{};
-
 int main()
 {
     array arr { 1, 2, 3, 4, 5 };    // arr在栈上，arr里的元素也在栈上
     vector vec { 2, 3, 4, 5, 6 };   // vec本身在栈上，但vec里的元素是申请在堆上的
-
     // 对于array和vector都能实现的功能，用array实现通常可以获得更高性能。
 }
 ```
@@ -236,7 +233,7 @@ int main()
 
 fab(3)、fab(10)、fab(15)、fab(20)这四个函数返回值被优化成了0x37、0x262、0x1a6d。也就是说程序在运行时直接拿来就用，不再需要计算。
 
-当然不是C++17也是可以做编译期编程的，只不过要麻烦一些，我们可以用模板展开来实现。感兴趣可以参考[while_during_compile.cpp](https://github.com/qsyttkx/geek_time_cpp/blob/qsy/my_test/while_during_compile.cpp)里的代码。
+当然不是C++17也是可以做编译期编程的，只不过要麻烦一些，我们可以用模板展开来实现。感兴趣可以参考[while_during_compile.cpp](my_test/while_during_compile.cpp)里的代码。
 
 ## 函数返回多参数
 
